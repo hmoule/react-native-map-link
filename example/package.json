@@ -11,7 +11,7 @@
     "expo": "^34.0.1",
     "react": "16.8.3",
     "react-native": "https://github.com/expo/react-native/archive/sdk-34.0.0.tar.gz",
-    "react-native-map-link": "^2.4.5"
+    "react-native-map-link": "^2.5.1"
   },
   "devDependencies": {
     "babel-preset-expo": "^6.0.0"
