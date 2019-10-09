@@ -1,12 +1,12 @@
 /**
  * React Native Map Link
  */
-
 import { Platform } from 'react-native'
+
 
 export const isIOS = Platform.OS === 'ios'
 
-export function generatePrefixes (options) {
+export function generatePrefixes(options) {
   return {
     'apple-maps': isIOS ? 'http://maps.apple.com/' : 'applemaps://',
     'google-maps': prefixForGoogleMaps(options.alwaysIncludeGoogle),
@@ -21,9 +21,13 @@ export function generatePrefixes (options) {
   }
 }
 
-export function prefixForGoogleMaps (alwaysIncludeGoogle) {
-  return isIOS && !alwaysIncludeGoogle
-    ? 'comgooglemaps://'
+export function prefixForGoogleMaps(alwaysIncludeGoogle) {
+  if (isIOS && !alwaysIncludeGoogle) {
+    return 'comgooglemaps://'
+  }
+    
+  return isIOS
+    ? 'https://www.google.com/maps'
     : 'https://maps.google.com/'
 }
 
