@@ -40,7 +40,7 @@ interface PopupProps {
     style?: PopupStyleProp,
     modalProps?: object,
     options: Options,
-    appsWhiteList: string[]
+    appsWhiteList?: string[]
 }
 
 export function showLocation(options: Options): Promise<void>;
